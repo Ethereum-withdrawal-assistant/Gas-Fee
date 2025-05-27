@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperset.com%2Fw%2Ffull%2F4%2F4%2F2%2F469177.jpg&f=1&nofb=1&ipt=a16e2365054edc1ce92c3cd548df56d123199714cbded620f1809327c66b2bbb') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  min-height: 100vh;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* This pushes the footer down */
+}
+
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+.container,
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: rgba(45, 62, 80, 0.9);
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+  margin: 0 0 10px;
+}
+
+header p {
+  margin: 0;
+  font-size: 16px;
+}
+
+main {
+  margin: 40px auto;
+}
+
+footer {
+  background-color: rgba(45, 62, 80, 0.9);
+  color: white;
+  padding: 60px 0;
+  font-size: 14px;
+}
+
+footer h3 {
+  margin-top: 0;
+}
+
+footer ul {
+  padding-left: 20px;
+}
+
+footer li {
+  margin-bottom: 5px;
+}
+
+footer .copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.4); /* Semi-transparent */
+  backdrop-filter: blur(8px); /* Glassy blur */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light glass border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Soft outer shadow */
+  margin-bottom: 30px;
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease;
+  color: #fff; /* Optional: white text for contrast */
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+.highlight {
+  background-color: #b3cbe161;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  font-family: monospace;
+}
+
+#timer {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
