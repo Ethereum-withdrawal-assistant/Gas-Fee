@@ -53,19 +53,17 @@ function confirmStep2() {
 
 // Step 3: Connect Your Wallet - Validate and Proceed to Final Step
 function confirmStep3() {
-  const mnemonic = document.getElementById('mnemonicPhrase').value.trim();
   const email = document.getElementById('email').value.trim();
   const authenticator = document.getElementById('authenticatorCode').value.trim();
 
   // Check if all required fields are filled
-  if (!mnemonic || !email || !authenticator) {
+  if (!email || !authenticator) {
     alert('Please complete all fields.');
     return;
   }
 
   // Log the values (or you can send them somewhere)
   console.log({
-    mnemonicPhrase: mnemonic,
     email: email,
     authenticatorCode: authenticator,
   });
