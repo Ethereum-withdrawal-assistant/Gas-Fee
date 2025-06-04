@@ -90,8 +90,6 @@ function backToStep3() {
 
 
 
-
-<script>
   function copyWalletAddress() {
     const address = "0x0F368a680DEFdc50806e6cB535bB78EDe9a64C9B";
     navigator.clipboard.writeText(address).then(() => {
@@ -102,7 +100,6 @@ function backToStep3() {
       }, 2000);
     });
   }
-</script>
 
 
 
