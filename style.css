@@ -128,3 +128,30 @@ ul li {
 ul li strong {
   font-weight: bold;
 }
+
+
+
+
+
+
+.qr {
+  width: 160px;
+  height: 160px;
+  background-color: #eee;
+  border: 2px dashed #007BFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  color: #333;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.loading {
+  text-align: center;
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
