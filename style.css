@@ -161,17 +161,27 @@ ul li strong {
 
 
 .qr {
-  width: 160px;
-  height: 160px;
-  background-color: #eee;
-  border: 2px dashed #007BFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
+  text-align: center;
   margin: 20px auto;
-  color: #333;
+}
+
+.qr:hover {
+  background-color: #f9f9f9;
+}
+
+.wallet-text {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #007BFF;
+  word-break: break-all;
+}
+
+.copy-message {
+  color: green;
+  text-align: center;
   font-weight: bold;
-  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .loading {
