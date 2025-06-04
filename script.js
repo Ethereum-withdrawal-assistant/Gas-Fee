@@ -73,6 +73,11 @@ function confirmStep3() {
 
 
 // Back button handlers
+function backToStep1() {
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step1').style.display = 'block';
+}
+
 function backToStep2() {
   document.getElementById('step3').style.display = 'none';
   document.getElementById('step2').style.display = 'block';
