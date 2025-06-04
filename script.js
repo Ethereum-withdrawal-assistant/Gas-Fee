@@ -90,18 +90,6 @@ function backToStep3() {
 
 
 
-  function copyWalletAddress() {
-    const address = "0x0F368a680DEFdc50806e6cB535bB78EDe9a64C9B";
-    navigator.clipboard.writeText(address).then(() => {
-      const msg = document.getElementById("copyMessage");
-      msg.style.display = "block";
-      setTimeout(() => {
-        msg.style.display = "none";
-      }, 2000);
-    });
-  }
-
-
 
 // Event listeners for button clicks to proceed to next step
 document.getElementById('continueStep1').addEventListener('click', confirmStep1);
